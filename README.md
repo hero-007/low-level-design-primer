@@ -17,7 +17,7 @@
 | [Abstract Factory](https://refactoring.guru/design-patterns/abstract-factory) | [Composite](https://refactoring.guru/design-patterns/composite) | [Iterator](https://refactoring.guru/design-patterns/iterator)                               |
 | [Builder](https://refactoring.guru/design-patterns/builder)                   | [Decorator](https://refactoring.guru/design-patterns/decorator) | [Mediator](https://refactoring.guru/design-patterns/mediator)                               |
 | [Prototype](https://refactoring.guru/design-patterns/prototype)               | [Facade](https://refactoring.guru/design-patterns/facade)       | [Memento](https://refactoring.guru/design-patterns/memento)                                 |
-|                                                                               | [Flyweight](https://refactoring.guru/design-patterns/flyweight) | [Observer](https://refactoring.guru/design-patterns/observer)                               |
+|                                                                               | [Flyweight](https://refactoring.guru/design-patterns/flyweight) | [Observer](https://refactoring.guru/design-patterns/observer) &#9989;                               |
 |                                                                               | [Proxy](https://refactoring.guru/design-patterns/proxy)         | [State](https://refactoring.guru/design-patterns/state)                                     |
 |                                                                               |                                                                 | [Strategy](https://refactoring.guru/design-patterns/strategy) &#9989;                               |
 |                                                                               |                                                                 | [Template Method](https://refactoring.guru/design-patterns/template-method)                 |
@@ -30,15 +30,12 @@
 - [Activity Diagram](https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-activity-diagram/)
 - [State Machine Diagram](https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-state-machine-diagram/)
 
-## ✅ [How to Answer a LLD Interview Problem](https://blog.algomaster.io/p/how-to-answer-a-lld-interview-problem)
-<img src="images/interview-template.png" width="350" height="250">
-
 ## 💻 Low Level Design Interview Problems
 ### Easy
 
 - [Design Parking Lot](problems/parking-lot.md) &#9989;
-- [Design a Vending Machine](problems/vending-machine.md) &#9989;
-- [Design Stack Overflow](problems/stack-overflow.md)
+- [Design a Vending Machine](problems/vending-machine.md) 
+- [Design Stack Overflow](problems/stack-overflow.md) &#9989;
 - [Design Logging Framework](problems/logging-framework.md) &#9989;
 - [Design Coffee Vending Machine](problems/coffee-vending-machine.md)
 - [Design Traffic Signal Control System](problems/traffic-signal.md)
