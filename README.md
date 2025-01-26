@@ -56,7 +56,7 @@
 - [Design Airline Management System](problems/airline-management-system.md)
 - [Design a Digital Wallet System](problems/digital-wallet-system.md)
 - [Design an Online Auction System](problems/online-auction-system.md)
-- [Design a Concert Ticket Booking System](problems/concert-ticketing-system.md)
+- [Design a Concert Ticket Booking System](problems/concert-ticketing-system.md) 
 - [Design a Cache using LRU Eviction Policy](problems/lru-cache.md)
 - [Design a search engine for a tech blog](problems/lru-cache.md) &#9989;
 
@@ -64,10 +64,10 @@
 
 - [Design Movie Ticket Booking System](problems/movie-ticket-booking-system.md) &#9989;
 - [Design Splitwise](problems/splitwise.md)
-- [Design a Snake and Ladder game](problems/snake-and-ladder.md)
+- [Design a Snake and Ladder game](problems/snake-and-ladder.md) &#9989;
 - [Design Online Shopping System like Amazon](problems/online-shopping-service.md)
 - [Design Online Stock Brokerage System](problems/online-stock-brokerage-system.md)
-- [Design CricInfo](problems/cricinfo.md)
+- [Design CricInfo](problems/cricinfo.md) &#9989;
 - [Design Chess Game](problems/chess-game.md)
 - [Design Ride-Sharing Service (like Uber)](problems/ride-sharing-service.md) &#9989;
 - [Design Online Food Delivery Service (like Swiggy)](problems/food-delivery-service.md)
