@@ -26,4 +26,6 @@ public class BankingPartnerManager {
   public void removeBankingPartner(IBankingPartner IBankingPartner) {
     IBankingPartners.remove(IBankingPartner);
   }
+
+  public List<IBankingPartner> getAllBankingPartners() { return IBankingPartners; }
 }

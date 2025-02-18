@@ -5,12 +5,12 @@ import questions.paymentGateway.methods.IPaymentMethod;
 
 import java.util.List;
 
-public interface PaymentGatewayClient {
-  void initiatePayment();
-
+public interface IPaymentGatewayClient {
   void addPaymentMethod(IPaymentMethod IPaymentMethod);
   void removePaymentMethod(IPaymentMethod IPaymentMethod);
   List<IPaymentMethod> getAllPaymentMethods();
 
   void addBankingPartner(IBankingPartner bankingPartner);
+  void removeBakingPartner(IBankingPartner bankingPartner);
+  List<IBankingPartner> getAllBankingPartners();
 }

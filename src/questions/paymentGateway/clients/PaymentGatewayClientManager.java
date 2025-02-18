@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PaymentGatewayClientManager {
-  List<PaymentGatewayClient> paymentGatewayClients;
+  List<IPaymentGatewayClient> IPaymentGatewayClients;
 
   private static PaymentGatewayClientManager paymentGatewayClientManager;
 
   private PaymentGatewayClientManager() {
-    paymentGatewayClients = new ArrayList<>();
+    IPaymentGatewayClients = new ArrayList<>();
   }
 
   public static PaymentGatewayClientManager getInstance() {
@@ -19,15 +19,15 @@ public class PaymentGatewayClientManager {
     return paymentGatewayClientManager;
   }
 
-  public void addClient(PaymentGatewayClient paymentGatewayClient) {
-    paymentGatewayClients.add(paymentGatewayClient);
+  public void addClient(IPaymentGatewayClient IPaymentGatewayClient) {
+    IPaymentGatewayClients.add(IPaymentGatewayClient);
   }
 
-  public void removeClient(PaymentGatewayClient paymentGatewayClient) {
-    paymentGatewayClients.remove(paymentGatewayClient);
+  public void removeClient(IPaymentGatewayClient IPaymentGatewayClient) {
+    IPaymentGatewayClients.remove(IPaymentGatewayClient);
   }
 
-  public List<PaymentGatewayClient> getAllClients() {
-    return paymentGatewayClients;
+  public List<IPaymentGatewayClient> getAllClients() {
+    return IPaymentGatewayClients;
   }
 }

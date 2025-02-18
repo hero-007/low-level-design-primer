@@ -1,6 +1,7 @@
 package questions.paymentGateway.banks;
 
 import questions.paymentGateway.methods.IPaymentMethod;
+import questions.paymentGateway.methods.PaymentRequest;
 import questions.paymentGateway.payment.IPaymentOrder;
 import questions.paymentGateway.payment.PaymentOrderStatus;
 
@@ -9,7 +10,7 @@ import java.util.UUID;
 
 public interface IBankingPartner {
 
-  IPaymentOrder initiatePayment();
+  IPaymentOrder initiatePayment(PaymentRequest request);
   PaymentOrderStatus processPayment(IPaymentOrder paymentOrder);
   boolean cancelPayment(UUID paymentOrderId);
 

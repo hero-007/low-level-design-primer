@@ -1,7 +1,8 @@
 package questions.paymentGateway.banks;
 
 import questions.paymentGateway.methods.IPaymentMethod;
-import questions.paymentGateway.methods.PaymentMethodsManager;
+import questions.paymentGateway.methods.PaymentMethodManager;
+import questions.paymentGateway.methods.PaymentRequest;
 import questions.paymentGateway.payment.IPaymentOrder;
 import questions.paymentGateway.payment.PaymentOrder;
 import questions.paymentGateway.payment.PaymentOrderStatus;
@@ -11,7 +12,7 @@ import java.util.*;
 public class BankingPartner implements IBankingPartner {
   private UUID bankingPartnerUUID;
   private String bankingPartnerName;
-  private PaymentMethodsManager paymentMethodsManager;
+  private PaymentMethodManager paymentMethodManager;
   private List<IPaymentOrder> paymentOrders;
   private Long successfulPaymentCount;
   private Long totalPaymentCount;
@@ -22,14 +23,15 @@ public class BankingPartner implements IBankingPartner {
     bankingPartnerUUID = UUID.randomUUID();
 
     this.bankingPartnerName = bankingPartnerName;
-    this.paymentMethodsManager = new PaymentMethodsManager();
+    this.paymentMethodManager = PaymentMethodManager.getInstance();
+    this.paymentOrders = new ArrayList<>();
     successfulPaymentCount = 0L;
     totalPaymentCount = 0L;
   }
 
   @Override
-  public IPaymentOrder initiatePayment() {
-    IPaymentOrder order = new PaymentOrder();
+  public IPaymentOrder initiatePayment(PaymentRequest request) {
+    IPaymentOrder order = new PaymentOrder(request);
     paymentOrders.add(order);
     totalPaymentCount += 1;
 
@@ -39,6 +41,8 @@ public class BankingPartner implements IBankingPartner {
   @Override
   public PaymentOrderStatus processPayment(IPaymentOrder paymentOrder) {
     Random random = new Random();
+    IPaymentMethod paymentProcessor = paymentMethodManager.getAppropriatePaymentMethod(paymentOrder.getPaymentRequest());
+    paymentProcessor.processPayment(paymentOrder.getPaymentRequest());
     int index = random.nextInt(possiblePaymentStatuses.size());
 
     PaymentOrderStatus status = paymentOrder.updatePaymentOrderStatus(possiblePaymentStatuses.get(index));
@@ -63,17 +67,17 @@ public class BankingPartner implements IBankingPartner {
 
   @Override
   public void addPaymentMethod(IPaymentMethod IPaymentMethod) {
-    paymentMethodsManager.addPaymentMethod(IPaymentMethod);
+    paymentMethodManager.addPaymentMethod(IPaymentMethod);
   }
 
   @Override
   public void removePaymentMethod(IPaymentMethod IPaymentMethod) {
-    paymentMethodsManager.removePaymentMethod(IPaymentMethod);
+    paymentMethodManager.removePaymentMethod(IPaymentMethod);
   }
 
   @Override
   public List<IPaymentMethod> getAllSupportedPaymentMethods() {
-    return paymentMethodsManager.getAllSupportedPaymentMethods();
+    return paymentMethodManager.getAllSupportedPaymentMethods();
   }
 
   @Override
